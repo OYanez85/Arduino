@@ -1,64 +1,44 @@
-# Arduino
-FLynt CS50 IoT Bootcamp
+# Arduino Projects Collection
 
----
-marp: true
-theme: default
-paginate: true
----
+This repository contains a series of hands-on Arduino sketches developed as part of the **Flynt CSS0 IoT Bootcamp**. Each project focuses on fundamental embedded systems concepts, including digital/analog I/O, sensor integration, and actuator control.
 
-# Arduino Fan Speed Control
-### Serial Input Controlled PWM Motor
+## 📁 Repository Overview
 
----
+The repository includes multiple standalone `.ino` sketches demonstrating core Arduino functionalities:
 
-## Overview
+- **Simple_LED_Circuit.ino** – Basic LED control
+- **Simple_LED_Switch.ino** – LED toggling using a switch
+- **Joystick.ino** – Reading analog input from a joystick module
+- **Ultrasonic.ino** – Distance measurement using an ultrasonic sensor
+- **Piezo_Buzzer.ino** – Sound generation with a buzzer
+- **CPU_Fan_Control_Input.ino** – Controlling fan behavior via input signals
 
-- Control a DC fan using Arduino
-- Speed adjusted via **Serial input (0–9)**
-- Uses **PWM (Pulse Width Modulation)**
-- Simple, interactive, and scalable
+## 🎯 Purpose
 
----
+This collection is designed to:
+- Reinforce foundational Arduino programming skills
+- Provide practical examples of sensor and actuator interfacing
+- Serve as a reference for beginners exploring embedded systems and IoT
 
-## Hardware Requirements
+## 🛠 Requirements
 
-- Arduino board (e.g., Uno)
-- DC motor / fan
-- Transistor or motor driver (recommended)
-- Power supply
-- Jumper wires
+- Arduino board (e.g., Uno, Nano)
+- Arduino IDE
+- Basic electronic components (LEDs, resistors, sensors, etc.)
 
----
+## 🚀 Getting Started
 
-## Core Concept
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/Arduino.git
+   - Open any `.ino` file in the Arduino IDE  
+   - Upload to your Arduino board  
+   - Connect components as required by the sketch  
 
-### PWM Control
+## 📌 Notes
 
-- `analogWrite()` outputs PWM signal
-- Range: **0–255**
-- Higher value → faster motor speed
+Each sketch is self-contained and may require specific wiring setups. Refer to comments within each file for guidance.
 
----
+## 📄 License
 
-## User Interaction
-
-- Open Serial Monitor
-- Enter a number:
-  - `0` → motor OFF
-  - `9` → maximum speed
-- Real-time speed adjustment
-
----
-
-## Code Structure
-
-### Setup Function
-
-```cpp
-void setup() {
-  pinMode(motorPin, OUTPUT);
-  analogWrite(motorPin, 0);
-  Serial.begin(9600);
-  Serial.println("Enter a number between 0 and 9: ");
-}
+This project is licensed under the CC0 1.0 Universal License.
